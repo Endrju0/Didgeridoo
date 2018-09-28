@@ -1,8 +1,9 @@
 const Commando = require('discord.js-commando'); //const Discord = require('discord.js');
 const bot = new Commando.Client(); //new Discord.Client();
-const TOKEN = '';
+const config = require('./config.js');
 
 bot.registry.registerGroup('simple', 'Simple'); //grupa komend
+bot.registry.registerGroup('sounds', 'Sounds');
 bot.registry.registerDefaults(); //informacje o komendach
 bot.registry.registerCommandsIn(__dirname + '/commands'); //lokalizacja z komendami
 
@@ -19,4 +20,4 @@ bot.on('ready', function() {
     console.log(new Date().toLocaleString() + ': Ready');
 });
 
-bot.login(TOKEN);
+bot.login(config.TOKEN);
