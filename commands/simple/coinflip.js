@@ -1,13 +1,13 @@
 const commando = require('discord.js-commando');
 
-class CoinFlipCommand extends commando.Command { //szablon z commando dla klasy
+class CoinFlipCommand extends commando.Command { //template for class from commando
 
     constructor(client) {
-        super(client, { //nadpisanie konstruktora szablonu
-            name: 'flip', //wywołanie komendy
-            group: 'simple', //nazwa grupy do jakiej należy komenda
-            memberName: 'flip', //nazwa do helpa
-            description: 'Rzut monetą' //opis
+        super(client, {
+            name: 'flip', //command
+            group: 'simple', //group name to which this command belongs to
+            memberName: 'flip', //name in !help
+            description: 'Coin flip' //description
         })
     }
 
@@ -15,11 +15,11 @@ class CoinFlipCommand extends commando.Command { //szablon z commando dla klasy
         var chance = Math.floor(Math.random() * 2);
 
         if(chance == 0) {
-            message.reply('Orzel');
+            message.reply('Heads');
         } else {
-            message.reply('Reszka');
+            message.reply('Tails');
         }
     }
 }
 
-module.exports = CoinFlipCommand; //info o tym, że komenda istnieje
+module.exports = CoinFlipCommand; //export information about this command

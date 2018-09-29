@@ -7,15 +7,15 @@ class DiceBetCommand extends commando.Command {
             name: 'roll',
             group: 'simple', 
             memberName: 'roll',
-            description: 'low (1-3) albo high(4-6)',
+            description: 'Bet if ',
             args: [ {
                 key: 'value',
-                prompt: 'Podaj czy chcesz postawić na low (1-3) czy high (4-6).',
+                prompt: 'Bet if dice will land on low (1-3) or high(4-6)',
                 type: 'string',
                 validate: value => {
                     if (value.toLowerCase() != 'high' || value.toLowerCase() !=  'low' || value.toLowerCase() !=  'h' || value.toLowerCase() !=  'l' )
                         return true
-                    else return 'Podaj wartość high (h) lub low (l)';
+                    else return 'Please enter a value: high (h) or low (l)';
                 }
             } ]
         })
